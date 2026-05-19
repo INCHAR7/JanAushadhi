@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA"
+    android:padding="16dp">
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search branded or generic medicines..."
+        android:background="#FFFFFF"
+        android:elevation="2dp" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/savingsCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchView"
+        android:layout_marginTop="12dp"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="#E3F2FD"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <TextView
+                android:id="@+id/tvSavingsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#0D47A1"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMedicineResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/savingsCard"
+        android:layout_above="@id/btnSetReminder"
+        android:layout_marginTop="12dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSetReminder"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnOpenMap"
+        android:text="Schedule Monthly Refill Reminder"
+        android:textColor="#0056B3"
+        app:strokeColor="#0056B3"
+        android:layout_marginBottom="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOpenMap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Find Nearest Jan-Aushadhi Store"
+        android:backgroundTint="#0056B3"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="8dp"/>
+</RelativeLayout>
